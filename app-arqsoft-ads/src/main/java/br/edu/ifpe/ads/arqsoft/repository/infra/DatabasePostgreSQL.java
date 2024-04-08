@@ -13,7 +13,7 @@ public class DatabasePostgreSQL implements Database {
 		try {
 			Class.forName("org.postgresql.Driver");
 			this.connection = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/arqsoft2024", "postgres", "ifpe");
+					.getConnection("jdbc:postgresql://localhost:5432/arqsoft2024", "postgres", "postgres");
 			return connection;
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

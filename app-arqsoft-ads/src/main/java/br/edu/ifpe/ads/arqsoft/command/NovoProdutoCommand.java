@@ -13,5 +13,4 @@ public class NovoProdutoCommand implements Command {
 		System.out.println("COMANDO NOVO PRODUTO");
 		return pagina;
 	}
-
 }

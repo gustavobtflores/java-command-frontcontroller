@@ -12,8 +12,8 @@
 		<h1>Cadastro de Categoria</h1>
 	</div>
 	<div style="margin-top: 10px">
-		<form action="/app-arqsoft-ads/controller" method="post">
-		<%Categoria categoria = (Categoria)request.getAttribute("produto"); %>
+		<form action="/app-arqsoft-ads/controller?acao=salvarCategoria" method="post">
+		<%Categoria categoria = (Categoria)request.getAttribute("categoria"); %>
 		
 		<input type="hidden" id="acao" name="acao" value="salvarCategoria">
 		<input type="hidden" id="id" name="id" value=<%=(categoria!=null ? categoria.getId() : "")%>>

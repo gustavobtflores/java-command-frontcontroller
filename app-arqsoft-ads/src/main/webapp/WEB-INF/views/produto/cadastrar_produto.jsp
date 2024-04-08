@@ -12,7 +12,7 @@
 		<h1>Cadastro de Produto</h1>
 	</div>
 	<div style="margin-top: 10px">
-		<form action="/app-arqsoft-ads/controller" method="post">
+		<form action="/app-arqsoft-ads/controller?acao=salvarProduto" method="post">
 		<%Produto produto = (Produto)request.getAttribute("produto"); %>
 		<input type="hidden" id="acao" name="acao" value="salvarProduto">
 		<input type="hidden" id="id" name="id" value=<%=(produto!=null ? produto.getId() : "")%>>
@@ -31,9 +31,6 @@
 					name="preco" value=<%=(produto!=null?produto.getPreco():"") %> />
 			</div>
 			<div style="margin-top: 10px">
-			
-			
-
 				<button>Enviar</button>
 			</div>
 		</form>

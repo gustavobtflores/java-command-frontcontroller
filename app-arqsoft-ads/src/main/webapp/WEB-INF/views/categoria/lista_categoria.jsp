@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="br.edu.ifpe.ads.arqsoft.domain.entity.Produto"%>
+<%@ page import="br.edu.ifpe.ads.arqsoft.domain.entity.Categoria" %>
 
 <!DOCTYPE html>
 <html>
@@ -22,14 +22,13 @@
 			</tr>
 		</thead>
 		<tbody>
-		<% List<Produto> produtos = (List<Produto>) request.getAttribute("listaDeProdutos"); %>
-		<% for (Produto p: produtos){ %>
+		<% List<Categoria> categorias = (List<Categoria>) request.getAttribute("listaDeCategorias"); %>
+		<% for (Categoria c: categorias){ %>
 			<tr>				
-				<td><%= p.getNome() %></td>
-				<td><%= p.getDescricao() %></td>
-				<td><%= p.getPreco() %></td>
-				<td><a href="./produtos?acao=editar&id=<%=p.getId()%>">Editar</a></td>
-				<td><a href="./produtos?acao=remover&id=<%=p.getId()%>">Remover</a></td>
+				<td><%= c.getNome() %></td>
+				<td><%= c.getDescricao() %></td>
+				<td><a href="./controller?acao=editarCategoria&id=<%=c.getId()%>">Editar</a></td>
+				<td><a href="./controller?acao=removerCategoria&id=<%=c.getId()%>">Remover</a></td>
 
 			</tr>
 		<% } %>

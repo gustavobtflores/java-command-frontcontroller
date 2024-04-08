@@ -24,7 +24,7 @@ public class CategoriaDAO implements DAO<Categoria> {
 		this.database = database;
 	}
 
-	private String sqlInsert = "insert into produto(nome,descricao,preco,id_categoria) values(?,?,?,?)";
+	private String sqlInsert = "insert into categoria(nome,descricao) values(?,?)";
 	
 	public void salvar(Categoria categoria) {
 		Connection conexao = this.database.connect();
@@ -32,7 +32,6 @@ public class CategoriaDAO implements DAO<Categoria> {
 			PreparedStatement pstm = conexao.prepareStatement(sqlInsert);
 			pstm.setString(1, categoria.getNome());
 			pstm.setString(2, categoria.getDescricao());
-			pstm.setLong(4, 1);
 			pstm.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();

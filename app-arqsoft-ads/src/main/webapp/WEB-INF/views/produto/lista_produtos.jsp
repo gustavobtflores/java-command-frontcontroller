@@ -28,9 +28,8 @@
 				<td><%= p.getNome() %></td>
 				<td><%= p.getDescricao() %></td>
 				<td><%= p.getPreco() %></td>
-				<td><a href="./produtos?acao=editar&id=<%=p.getId()%>">Editar</a></td>
-				<td><a href="./produtos?acao=remover&id=<%=p.getId()%>">Remover</a></td>
-
+				<td><a href="./controller?acao=editarProduto&id=<%=p.getId()%>">Editar</a></td>
+				<td><a href="./controller?acao=removerProduto&id=<%=p.getId()%>">Remover</a></td>
 			</tr>
 		<% } %>
 		</tbody>
